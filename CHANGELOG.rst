@@ -6,6 +6,8 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 
 Latest
 ------
+- Removed composite name (name/original) from the Location and Observer changelists
+  in the Django Admin.
 
 0.1.0 (2025-07-10)
 ------------------

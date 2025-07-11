@@ -142,7 +142,7 @@ class CountyAdmin(admin.ModelAdmin):
 
 @admin.register(models.Location)
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ("identifier", "names", "county", "state", "country")
+    list_display = ("identifier", "name", "county", "state", "country")
     list_select_related = ("country", "county", "state")
     ordering = ("-identifier",)
     search_fields = (
@@ -154,13 +154,9 @@ class LocationAdmin(admin.ModelAdmin):
     )
     readonly_fields = ("identifier",)
 
-    @admin.display(description=_("Name / Byname"))
-    def names(self, obj):
-        return format_html("%s<br/>%s" % (obj.name, obj.byname))
-
     def formfield_for_dbfield(self, db_field, request, **kwargs):
         field = super().formfield_for_dbfield(db_field, request, **kwargs)
-        if db_field.name == "byname":
+        if db_field.name == "original":
             field.widget = TextInput(attrs={"class": "vLargeTextField"})
         elif db_field.name == "name":
             field.widget = TextInput(attrs={"class": "vLargeTextField"})
@@ -271,19 +267,15 @@ class ObservationAdmin(admin.ModelAdmin):
 
 @admin.register(models.Observer)
 class ObserverAdmin(admin.ModelAdmin):
-    list_display = ("names", "identifier", "multiple", "enabled")
+    list_display = ("name", "identifier", "multiple", "enabled")
     ordering = ("name",)
     search_fields = ("name", "identifier")
     list_filter = ("multiple", "enabled")
     form = ObservationForm
 
-    @admin.display(description=_("Name / Byname"))
-    def names(self, obj):
-        return format_html("%s<br/>%s" % (obj.name, obj.byname))
-
     def formfield_for_dbfield(self, db_field, request, **kwargs):
         field = super().formfield_for_dbfield(db_field, request, **kwargs)
-        if db_field.name == "byname":
+        if db_field.name == "original":
             field.widget = TextInput(attrs={"class": "vTextField"})
         elif db_field.name == "name":
             field.widget = TextInput(attrs={"class": "vTextField"})
