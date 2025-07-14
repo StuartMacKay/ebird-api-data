@@ -7,7 +7,8 @@ name = "ebird-api-data"
 version = "0.1.0"
 description = "eBird API Data is a reusable Django app for loading data from eBird into a database."
 keywords = ["checklists", "observations", "species", "Django", "eBird", "models"]
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
   {name = "Stuart MacKay", email = "smackay@flagstonesoftware.com"},
 ]
@@ -28,7 +29,6 @@ classifiers = [
     "Framework :: Django :: 5.0",
     "Framework :: Django :: 5.1",
     "Framework :: Django :: 5.2",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
