@@ -13,6 +13,34 @@ and Django.
 
 Install
 =======
-.. include:: ../README.rst
-    :start-after: install-start
-    :end-before: install-end
+You can use either `pip`_ or `uv`_ to download the `package`_ from PyPI and
+install it into a virtualenv:
+
+.. code-block:: console
+
+    pip install ebird-api-data
+
+or:
+
+.. code-block:: console
+
+    uv add ebird-api-data
+
+Update ``INSTALLED_APPS`` in your Django setting:
+
+.. code-block:: python
+
+    INSTALLED_APPS = [
+        ...
+        ebird.api.data
+    ]
+
+Finally, run the migrations to create the tables:
+
+.. code-block:: python
+
+    python manage.py migrate
+
+.. _pip: https://pip.pypa.io/en/stable/
+.. _uv: https://docs.astral.sh/uv/
+.. _package: https://pypi.org/project/ebird-api-data/
