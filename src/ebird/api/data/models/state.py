@@ -8,8 +8,8 @@ class State(models.Model):
         verbose_name_plural = _("states")
 
     code = models.CharField(
-        max_length=10,
-        db_index=True,
+        max_length=6,
+        primary_key=True,
         verbose_name=_("code"),
         help_text=_("The code used to identify the state."),
     )

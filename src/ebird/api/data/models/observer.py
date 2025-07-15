@@ -7,7 +7,9 @@ class Observer(models.Model):
         verbose_name = _("observer")
         verbose_name_plural = _("observers")
 
-    identifier = models.TextField(
+    identifier = models.CharField(
+        max_length=15,
+        primary_key=True,
         verbose_name=_("identifier"),
         help_text=_("The code for the person submitted the checklist."),
     )

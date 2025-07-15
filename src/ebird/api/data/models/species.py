@@ -44,8 +44,9 @@ class Species(models.Model):
         help_text=_("The category from the eBird/Clements taxonomy."),
     )
 
-    species_code = models.TextField(
-        blank=True,
+    species_code = models.CharField(
+        max_length=10,
+        primary_key=True,
         verbose_name=_("species code"),
         help_text=_("The species code, e.g. ostric2, used in the eBird API."),
     )

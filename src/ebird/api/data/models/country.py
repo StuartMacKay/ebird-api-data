@@ -9,7 +9,7 @@ class Country(models.Model):
 
     code = models.CharField(
         max_length=2,
-        db_index=True,
+        primary_key=True,
         verbose_name=_("code"),
         help_text=_("The code used to identify the country."),
     )

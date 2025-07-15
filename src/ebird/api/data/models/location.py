@@ -64,8 +64,9 @@ class Location(models.Model):
         verbose_name = _("location")
         verbose_name_plural = _("locations")
 
-    identifier = models.TextField(
-        unique=True,
+    identifier = models.CharField(
+        max_length=15,
+        primary_key=True,
         verbose_name=_("identifier"),
         help_text=_("The unique identifier for the location."),
     )

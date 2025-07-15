@@ -6,6 +6,8 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 
 Latest
 ------
+- Changed the models to used the natural keys in the eBird data: Country codes (US),
+  Checklist identifiers (S259543824), etc.
 
 0.1.1 (2025-07-14)
 ------------------
