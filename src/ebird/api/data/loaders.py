@@ -303,19 +303,33 @@ class APILoader:
 
     def get_observer(self, data: dict) -> Observer:
         name: str = data.get("userDisplayName", "Anonymous eBirder")
-        observer, created = Observer.objects.get_or_create(
-            original=name, defaults={"name": name}
-        )
-        if observer.multiple:
+        is_multiple = Observer.objects.filter(original=name, multiple=True).exists()
+        if is_multiple:
+            identifier = self.get_observer_identifier(data)
             observer, created = Observer.objects.get_or_create(
-                identifier=self.get_observer_identifier(data),
-                defaults={"original": random_word(8), "name": name},
+                identifier=identifier,
+                defaults={
+                    "name":name,
+                    "original": random_word(8)
+                }
             )
-        elif observer.identifier == "":
-            observer.identifier = self.get_observer_identifier(data)
-            observer.save()
+        else:
+            if observer := Observer.objects.filter(original=name).first():
+                created = False
+            else:
+                identifier = self.get_observer_identifier(data)
+                observer = Observer.objects.create(
+                    identifier=identifier,
+                    name=name,
+                    original=name,
+                )
+                created = True
+
         if created:
-            logger.info("Added observer: %s", observer.name)
+            logger.info("Added observer: %s", name)
+            if Observer.objects.filter(original=name).count() > 1:
+                logger.error("Multiple observers exist with same name: %s", name)
+
         return observer
 
     def add_checklist(self, identifier: str) -> Checklist | None:
