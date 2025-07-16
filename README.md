@@ -130,7 +130,14 @@ Now log into the Django Admin, http:localhost:8000/admin to browse the tables.
 ## Project Information
 
 * Documentation: https://ebird-api-data.readthedocs.io/en/latest/
-* Issues: https://github.com/StuartMacKay/ebird-api-data/issues
+* Issues: https://todo.sr.ht/~smackay/ebird-api-data
+* Repository: https://git.sr.ht/~smackay/ebird-api-data
+* Announcements: https://lists.sr.ht/~smackay/ebirders-announce
+* Discussions: https://lists.sr.ht/~smackay/ebirders-discuss
+* Development: https://lists.sr.ht/~smackay/ebirders-develop
+
+The repository is also mirrored on Github:
+
 * Repository: https://github.com/StuartMacKay/ebird-api-data
 
 The app is tested on Python 3.10+, and officially supports Django 4.2, 5.0 and 5.1.
