@@ -72,7 +72,7 @@ uv venv
 
 Activate it:
 ```shell
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 Install the requirements:
