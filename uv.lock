@@ -262,6 +262,15 @@ wheels = [
 ]
 
 [[package]]
+name = "django-autocomplete-light"
+version = "3.12.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/bc/49/fd4705cd96f313d858f9a8c5fce1c33f1f61adb6b25acc92a924acf0a305/django_autocomplete_light-3.12.1.tar.gz", hash = "sha256:50f7b83681feec6491c38e6114d7a4fe80f9e99a8cc6c8458a3e7bb137ad6b1d", size = 296420, upload-time = "2025-02-26T08:21:16.332Z" }
+
+[[package]]
 name = "django-environ"
 version = "0.12.0"
 source = { registry = "https://pypi.org/simple" }
@@ -306,6 +315,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "bump-my-version" },
+    { name = "django-autocomplete-light" },
     { name = "django-environ" },
     { name = "django-extensions" },
     { name = "factory-boy" },
@@ -336,6 +346,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "bump-my-version", specifier = ">=0.29.0" },
+    { name = "django-autocomplete-light", specifier = ">=3.12.1" },
     { name = "django-environ", specifier = ">=0.11.2" },
     { name = "django-extensions", specifier = ">=3.2.3" },
     { name = "factory-boy", specifier = ">=3.3.1" },

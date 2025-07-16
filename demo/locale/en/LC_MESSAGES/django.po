@@ -1,0 +1,421 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-16 07:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: forms.py:29
+msgid "By Location"
+msgstr ""
+
+#: forms.py:32
+msgid "Country"
+msgstr ""
+
+#: forms.py:37
+msgid "Select one or more countries"
+msgstr ""
+
+#: forms.py:42
+msgid "State"
+msgstr ""
+
+#: forms.py:49
+msgid "Select one or more states"
+msgstr ""
+
+#: forms.py:55
+msgid "County"
+msgstr ""
+
+#: forms.py:62
+msgid "Select one or more counties"
+msgstr ""
+
+#: forms.py:68 templates/checklists/includes/list-entries-wide.html:7
+#: templates/observations/includes/list-entries-wide.html:8
+#: templates/species/includes/list-entries-wide.html:9
+msgid "Location"
+msgstr ""
+
+#: forms.py:75
+msgid "Select one or more locations"
+msgstr ""
+
+#: forms.py:81
+msgid "Hotspots only"
+msgstr ""
+
+#: forms.py:83
+msgid "No"
+msgstr ""
+
+#: forms.py:84
+msgid "Yes"
+msgstr ""
+
+#: forms.py:101
+msgid "By Observer"
+msgstr ""
+
+#: forms.py:104 templates/checklists/includes/list-entries-wide.html:9
+#: templates/observations/includes/list-entries-wide.html:9
+#: templates/species/includes/list-entries-wide.html:10
+msgid "Observer"
+msgstr ""
+
+#: forms.py:120
+msgid "By Species"
+msgstr ""
+
+#: forms.py:123
+msgid "Common name"
+msgstr ""
+
+#: forms.py:133
+msgid "Scientific name"
+msgstr ""
+
+#: forms.py:167
+msgid "By Date"
+msgstr ""
+
+#: forms.py:169
+msgid "This date is later than the until date."
+msgstr ""
+
+#: forms.py:172
+msgid "From"
+msgstr ""
+
+#: forms.py:177
+msgid "Until"
+msgstr ""
+
+#: forms.py:197
+msgid "By Category"
+msgstr ""
+
+#: forms.py:200
+msgid "Category"
+msgstr ""
+
+#: forms.py:213
+msgid "Order By"
+msgstr ""
+
+#: forms.py:216
+msgid "Ordering"
+msgstr ""
+
+#: forms.py:218 views.py:271 views.py:277 views.py:279
+msgid "First Seen"
+msgstr ""
+
+#: forms.py:219 views.py:273
+msgid "Last Seen"
+msgstr ""
+
+#: forms.py:220 views.py:285
+msgid "Highest Count"
+msgstr ""
+
+#: settings.py:120
+msgid "English"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:7
+#: templates/checklists/includes/list-entries-wide.html:19
+#: templates/checklists/includes/list-entries-wide.html:23
+msgid "Show checklists for this date"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:18
+#: templates/checklists/includes/list-entries-wide.html:35
+msgid "Show checklists for this location"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:23
+#: templates/checklists/includes/list-entries-wide.html:42
+msgid "Show checklists for this county"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:29
+#: templates/checklists/includes/list-entries-wide.html:50
+msgid "Show checklists for this state"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:33
+#: templates/checklists/includes/list-entries-wide.html:57
+msgid "Show checklists for this country"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:38
+#: templates/checklists/includes/list-entries-wide.html:104
+msgid "Show checklists for this observer"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:43
+msgid "Number of species"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:48
+#: templates/checklists/includes/list-entries-wide.html:64
+msgid "Complete"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:50
+#: templates/checklists/includes/list-entries-wide.html:66
+msgid "Incomplete"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:60
+#: templates/checklists/includes/list-entries-wide.html:78
+msgid "Number of Observers"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:67
+#: templates/checklists/includes/list-entries-wide.html:87
+msgid "Stationary"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:76
+#: templates/checklists/includes/list-entries-wide.html:91
+msgid "Travelling"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:81
+#: templates/checklists/includes/list-entries-wide.html:93
+#, python-format
+msgid "%(distance)s km,"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:87
+#: templates/checklists/includes/list-entries-wide.html:97
+msgid "Incidental"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-narrow.html:96
+#: templates/checklists/includes/list-entries-wide.html:110
+#: templates/observations/includes/list-entries-narrow.html:54
+#: templates/observations/includes/list-entries-narrow.html:73
+#: templates/observations/includes/list-entries-wide.html:79
+#: templates/species/includes/list-entries-narrow.html:50
+#: templates/species/includes/list-entries-narrow.html:69
+#: templates/species/includes/list-entries-wide.html:77
+msgid "View this checklist on eBird.org"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-wide.html:5
+#: templates/observations/includes/list-entries-wide.html:5 views.py:275
+msgid "Date"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-wide.html:6
+#: templates/checklists/includes/list-entries.html:3 templates/page.html:46
+#: templates/species/includes/list-title.html:4 templates/species/list.html:4
+msgid "Species"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-wide.html:8
+msgid "Protocol"
+msgstr ""
+
+#: templates/checklists/includes/list-entries-wide.html:10
+#: templates/observations/includes/list-entries-wide.html:10
+#: templates/species/includes/list-entries-wide.html:11
+msgid "Checklist"
+msgstr ""
+
+#: templates/checklists/includes/list-filter.html:8
+msgid "Find Checklists"
+msgstr ""
+
+#: templates/checklists/includes/list-filter.html:18
+#: templates/observations/includes/list-filter.html:18
+#: templates/species/includes/list-filter.html:18
+msgid "Search"
+msgstr ""
+
+#: templates/checklists/includes/list-filter.html:19
+#: templates/observations/includes/list-filter.html:19
+#: templates/species/includes/list-filter.html:19
+msgid "Clear"
+msgstr ""
+
+#: templates/checklists/includes/list-pagination.html:10
+#: templates/observations/includes/list-pagination.html:10
+msgid "Previous page"
+msgstr ""
+
+#: templates/checklists/includes/list-pagination.html:10
+#: templates/checklists/includes/list-pagination.html:14
+#: templates/observations/includes/list-pagination.html:10
+#: templates/observations/includes/list-pagination.html:14
+msgid "Previous"
+msgstr ""
+
+#: templates/checklists/includes/list-pagination.html:22
+#: templates/observations/includes/list-pagination.html:22
+msgid "Next page"
+msgstr ""
+
+#: templates/checklists/includes/list-pagination.html:22
+#: templates/checklists/includes/list-pagination.html:26
+#: templates/observations/includes/list-pagination.html:22
+#: templates/observations/includes/list-pagination.html:26
+msgid "Next"
+msgstr ""
+
+#: templates/checklists/includes/list-pagination.html:34
+#: templates/observations/includes/list-pagination.html:34
+#, python-format
+msgid "Page %(number)s of %(total)s"
+msgstr ""
+
+#: templates/checklists/includes/list-title.html:4
+#: templates/checklists/list.html:4 templates/page.html:38
+msgid "Checklists"
+msgstr ""
+
+#: templates/checklists/includes/list-title.html:7
+#: templates/observations/includes/list-title.html:7
+#: templates/species/includes/list-title.html:7
+msgid "Updated every hour"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:8
+#: templates/observations/includes/list-entries-narrow.html:12
+#: templates/observations/includes/list-entries-wide.html:20
+#: templates/observations/includes/list-entries-wide.html:24
+msgid "Show observations for this date"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:19
+#: templates/observations/includes/list-entries-wide.html:34
+msgid "Show observations of this species"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:27
+#: templates/observations/includes/list-entries-wide.html:44
+msgid "Show observations for this location"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:32
+#: templates/observations/includes/list-entries-wide.html:51
+msgid "Show observations for this county"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:40
+#: templates/observations/includes/list-entries-wide.html:59
+msgid "Show observations for this state"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:44
+#: templates/observations/includes/list-entries-wide.html:66
+msgid "Show observations for this country"
+msgstr ""
+
+#: templates/observations/includes/list-entries-narrow.html:49
+#: templates/observations/includes/list-entries-wide.html:73
+msgid "Show observations from this observer"
+msgstr ""
+
+#: templates/observations/includes/list-entries-wide.html:6 views.py:287
+#: views.py:289
+msgid "Count"
+msgstr ""
+
+#: templates/observations/includes/list-entries-wide.html:7 views.py:255
+msgid "species.singular"
+msgstr ""
+
+#: templates/observations/includes/list-entries-wide.html:104
+msgid "No high counts were found."
+msgstr ""
+
+#: templates/observations/includes/list-filter.html:8
+msgid "Find Observations"
+msgstr ""
+
+#: templates/observations/includes/list-title.html:4
+#: templates/observations/list.html:4 templates/page.html:42
+msgid "Observations"
+msgstr ""
+
+#: templates/species/includes/list-entries-narrow.html:13
+#: templates/species/includes/list-entries-narrow.html:17
+#: templates/species/includes/list-entries-wide.html:28
+#: templates/species/includes/list-entries-wide.html:32
+msgid "Show species seen on this date"
+msgstr ""
+
+#: templates/species/includes/list-entries-narrow.html:23
+#: templates/species/includes/list-entries-wide.html:42
+msgid "Show species for this location"
+msgstr ""
+
+#: templates/species/includes/list-entries-narrow.html:28
+#: templates/species/includes/list-entries-wide.html:49
+msgid "Show species for this county"
+msgstr ""
+
+#: templates/species/includes/list-entries-narrow.html:36
+#: templates/species/includes/list-entries-wide.html:57
+msgid "Show species for this state"
+msgstr ""
+
+#: templates/species/includes/list-entries-narrow.html:40
+#: templates/species/includes/list-entries-wide.html:64
+msgid "Show species for this country"
+msgstr ""
+
+#: templates/species/includes/list-entries-narrow.html:45
+#: templates/species/includes/list-entries-wide.html:71
+msgid "Show species seen by this observer"
+msgstr ""
+
+#: templates/species/includes/list-filter.html:8
+msgid "Find Species"
+msgstr ""
+
+#: urls.py:24
+msgid "checklists/"
+msgstr ""
+
+#: urls.py:25
+msgid "observations/"
+msgstr ""
+
+#: urls.py:26
+msgid "species/"
+msgstr ""
+
+#: views.py:257
+msgid "Subspecies"
+msgstr ""
+
+#: views.py:259
+msgid "Domestics"
+msgstr ""
+
+#: views.py:261
+msgid "Hybrids"
+msgstr ""
+
+#: views.py:263 views.py:265
+msgid "Species, Forms, etc."
+msgstr ""

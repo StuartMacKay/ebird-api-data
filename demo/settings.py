@@ -30,6 +30,8 @@ DEBUG = env.bool("DJANGO_DEBUG", default=True)
 # #####################
 
 INSTALLED_APPS = [
+    "dal",
+    "dal_select2",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -95,7 +97,7 @@ SECRET_KEY = env.str("DJANGO_SECRET_KEY", default="<not-set>")
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(CONFIG_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -127,7 +129,12 @@ USE_TZ = True
 # ################
 
 STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
+STATICFILES_DIRS = [
+    os.path.join(CONFIG_DIR, "static"),
 ]
 
 STATIC_URL = "/static/"

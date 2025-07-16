@@ -1,0 +1,9 @@
+{% load i18n %}
+{% get_current_language as language_code %}
+{% trans "Species" as species_label %}
+<div class="d-none d-lg-block">
+  {% include "checklists/includes/list-entries-wide.html" %}
+</div>
+<div class="d-lg-none">
+  {% include "checklists/includes/list-entries-narrow.html" %}
+</div>

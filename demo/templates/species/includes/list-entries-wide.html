@@ -1,0 +1,101 @@
+{% load i18n %}
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>{{ category_title }}</th>
+    <th>{% trans "First Seen" %}</th>
+    <th>{% trans "Count" %}</th>
+    <th>{% trans "Location" %}</th>
+    <th>{% trans "Observer" %}</th>
+    <th>{% trans "Checklist" %}</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for observation in species_list %}
+    <tr {% if not observation.approved or forloop.last %}style="border-bottom-color: white"{% endif %}>
+      <td>{{ forloop.counter }}</td>
+      <td>
+        {{ observation.species.get_common_name }}
+        <br>
+        <small
+          class="text-muted fst-italic">{{ observation.species.scientific_name }}</small>
+      </td>
+      <td>
+        {% if language_code == 'pt' %}
+          <a class="dark-link text-nowrap"
+             href="{% querystring start=observation.date|date:'Y-m-d' finish=observation.date|date:'Y-m-d' %}"
+             title="{% trans 'Show species seen on this date' %}">{{ observation.date|date:"j b Y" }}</a>
+        {% else %}
+          <a class="dark-link text-nowrap"
+             href="{% querystring start=observation.date|date:'Y-m-d' finish=observation.date|date:'Y-m-d' %}"
+             title="{% trans 'Show species seen on this date' %}">{{ observation.date|date:"jS M Y" }}</a>
+        {% endif %}
+        {% if observation.time %}
+          <br/><small class="text-muted">{{ observation.time }}</small>
+        {% endif %}
+      </td>
+      <td class="text-end">{% if observation.count %}{{ observation.count }}{% else %}X{% endif %}</td>
+      <td>
+        <a class="dark-link"
+           href="{% querystring location=observation.location.identifier %}"
+           title="{% trans 'Show species for this location' %}">{{ observation.location.name }}</a>
+        <br/>
+        {% spaceless %}
+          {% if observation.county %}
+            <small class="text-muted">
+              <a class="dark-link"
+                 href="{% querystring county=observation.county.code location=None %}"
+                 title="{% trans 'Show species for this county' %}">{{ observation.county.name }}</a>
+            </small>
+          {% endif %}
+          {% if observation.state %}
+            <small class="text-muted">
+              {% if observation.county %}<span>, </span>{% endif %}
+              <a class="dark-link"
+                 href="{% querystring state=observation.state.code county=None location=None %}"
+                 title="{% trans 'Show species for this state' %}">{{ observation.state.name }}</a>
+            </small>
+          {% endif %}
+          <small class="text-muted">
+            <span>, </span>
+            <a class="dark-link"
+               href="{% querystring country=observation.country.code state=None county=None location=None %}"
+               title="{% trans 'Show species for this country' %}">{{ observation.country }}</a>
+          </small>
+        {% endspaceless %}
+      </td>
+      <td>
+        <a class="dark-link me-3"
+           href="{% querystring observer=observation.observer.identifier %}"
+           title="{% trans 'Show species seen by this observer' %}">{{ observation.observer.name }}</a>
+      </td>
+      <td>
+        <a class="dark-link"
+           href="{{ observation.checklist.url }}"
+           target="_blank"
+           title="{% trans 'View this checklist on eBird.org' %}">
+          <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+        {% if observation.audio %}
+          <i class="bi bi-volume-up-fill ms-1"></i>
+        {% endif %}
+        {% if observation.photo %}
+          <i class="bi bi-camera-fill ms-1"></i>
+        {% endif %}
+        {% if observation.video %}
+          <i class="bi bi-camera-video-fill ms-1"></i>
+        {% endif %}
+      </td>
+    </tr>
+    {% if not observation.approved %}
+      <tr {% if forloop.last %}style="border-bottom-color: white"{% endif %}>
+        <td colspan="6" class="pt-0">
+          <i class="bi bi-flag-fill text-danger me-1"></i>
+          <span class="fst-italic">{{ observation.get_reason }}</span>
+        </td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+  </tbody>
+</table>

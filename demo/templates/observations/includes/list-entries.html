@@ -1,0 +1,8 @@
+{% load i18n %}
+{% get_current_language as language_code %}
+<div class="d-none d-lg-block">
+  {% include "observations/includes/list-entries-wide.html" %}
+</div>
+<div class="d-lg-none">
+  {% include "observations/includes/list-entries-narrow.html" %}
+</div>

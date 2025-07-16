@@ -1,0 +1,44 @@
+{% extends "page.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Observations' %}{% endblock %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      {% include "observations/includes/list-title.html" %}
+    </div>
+    <div class="row">
+      <aside class="col-md-4 col-lg-3">
+        {% include "observations/includes/list-filter.html" %}
+      </aside>
+      <main class="col-md-8 col-lg-9">
+        {% include "observations/includes/list-entries.html" %}
+        {% include "observations/includes/list-pagination.html" %}
+      </main>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+  {{ media.js }}
+  <script>
+    $(document).ready(function() {
+      $(':input[name$=country]').on('change', function() {
+          var prefix = $(this).getFormPrefix();
+          $(':input[name=' + prefix + 'state]').val(null).trigger('change');
+      });
+      $(':input[name$=state]').on('change', function() {
+          var prefix = $(this).getFormPrefix();
+          $(':input[name=' + prefix + 'county]').val(null).trigger('change');
+      });
+      $(':input[name$=county]').on('change', function() {
+          var prefix = $(this).getFormPrefix();
+          $(':input[name=' + prefix + 'location]').val(null).trigger('change');
+      });
+    });
+  </script>
+
+{% endblock %}

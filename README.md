@@ -56,8 +56,9 @@ python manage.py migrate
 ## Demo
 
 If you check out the code from the repository there is a fully functioning
-Django site. It only contains the admin pages, but that is sufficient for
-you to browse the data.
+Django site. It contains pages for checklists, observations and species,
+where you can browse the records or search by location, observer. date. etc. 
+The Django Admin lets you browse and edit the records in the database.
 
 ```shell
 git clone git@github.com:StuartMacKay/ebird-api-data.git
@@ -125,7 +126,8 @@ Run the demo:
 python manage.py runserver
 ```
 
-Now log into the Django Admin, http:localhost:8000/admin to browse the tables.
+Now, either visit the site, http:localhost:8000/, or log into the Django Admin, 
+http:localhost:8000/admin to browse the tables.
 
 ## Project Information
 

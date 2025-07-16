@@ -8,7 +8,7 @@ license-files = ["LICENSE"]
 authors = [
   {name = "Stuart MacKay", email = "smackay@flagstonesoftware.com"},
 ]
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "beautifulsoup4>=4.13.3",
@@ -61,6 +61,7 @@ dev-dependencies = [
     "django-extensions>=3.2.3",
     "psycopg2-binary>=2.9.10",
     "ipython>=8.37.0",
+    "django-autocomplete-light>=3.12.1",
 ]
 
 [tool.bumpversion]
