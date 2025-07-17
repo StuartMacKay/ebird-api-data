@@ -318,12 +318,10 @@ class APILoader:
                 created = False
             else:
                 identifier = self.get_observer_identifier(data)
-                observer = Observer.objects.create(
+                observer, created = Observer.objects.get_or_create(
                     identifier=identifier,
-                    name=name,
-                    original=name,
+                    defaults={"name": name, "original":name,}
                 )
-                created = True
 
         if created:
             logger.info("Added observer: %s", name)
