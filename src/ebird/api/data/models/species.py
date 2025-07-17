@@ -90,6 +90,10 @@ class Species(models.Model):
         blank=True,
     )
 
+    created = models.DateTimeField(
+        null=True, auto_now_add=True, help_text=_("When was the record created.")
+    )
+
     def __repr__(self) -> str:
         return str(self.species_code)
 

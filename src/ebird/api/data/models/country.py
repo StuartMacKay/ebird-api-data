@@ -22,6 +22,10 @@ class Country(models.Model):
         verbose_name=_("place"), help_text=_("The hierarchical name of the country.")
     )
 
+    created = models.DateTimeField(
+        null=True, auto_now_add=True, help_text=_("When was the record created.")
+    )
+
     def __repr__(self) -> str:
         return str(self.code)
 

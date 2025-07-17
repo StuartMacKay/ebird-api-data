@@ -48,6 +48,10 @@ class Filter(models.Model):
         help_text=_("Matching Observations are updated to this species."),
     )
 
+    created = models.DateTimeField(
+        null=True, auto_now_add=True, help_text=_("When was the record created.")
+    )
+
     def __repr__(self) -> str:
         return str(self.name)
 
