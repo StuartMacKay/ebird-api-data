@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 from django.views import generic
 from django.views.generic.base import ContextMixin
 
-from ebird.api.data.models import Checklist, Observation
+from ebird.api.data.models import Checklist, Observation, Species
 
 from .forms import (
     CategoryFilter,
@@ -249,16 +249,7 @@ class SpeciesView(FilteredListView):
 
     def get_category_title(self):
         if category := self.request.GET.get("category"):
-            if category == "species":
-                title = _("species.singular")
-            elif category == "issf":
-                title = _("Subspecies")
-            elif category == "domestic":
-                title = _("Domestics")
-            elif category == "hybrid":
-                title = _("Hybrids")
-            else:
-                title = _("Species, Forms, etc.")
+            title = Species.Category[category].label
         else:
             title = _("Species, Forms, etc.")
         return title
