@@ -97,7 +97,7 @@ search = """
 replace = """
 ## Latest
 
-## {new_version}
+## {new_version} ({now:%Y-%m-%d})
 """
 
 [[tool.bumpversion.files]]
