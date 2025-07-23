@@ -12,11 +12,14 @@ log = logging.getLogger(__name__)
 
 class Species(models.Model):
     class Category(models.TextChoices):
-        ALL = "", _("All categories")
         SPECIES = "species", _("Species")
+        SLASH = "slash", _("Species pairs")
         SUBSPECIES = "issf", _("Subspecies")
-        DOMESTIC = "domestic", _("Domestic")
-        HYBRID = "hybrid", _("Hybrid")
+        DOMESTIC = "domestic", _("Domestic species")
+        HYBRID = "hybrid", _("Hybrids")
+        FORM = "form", _("Species forms")
+        SPUH = "spuh", _("Unidentified species")
+        INTERGRADE = "intergrade", _("Intergrades")
 
     class Meta:
         verbose_name = _("species")
