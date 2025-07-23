@@ -308,10 +308,7 @@ class APILoader:
             identifier = self.get_observer_identifier(data)
             observer, created = Observer.objects.get_or_create(
                 identifier=identifier,
-                defaults={
-                    "name":name,
-                    "original": random_word(8)
-                }
+                defaults={"name": name, "original": random_word(8)},
             )
         else:
             if observer := Observer.objects.filter(original=name).first():
@@ -320,7 +317,7 @@ class APILoader:
                 identifier = self.get_observer_identifier(data)
                 observer, created = Observer.objects.get_or_create(
                     identifier=identifier,
-                    defaults={"name": name, "original":name,}
+                    defaults={"name": name, "original": name},
                 )
 
         if created:
@@ -392,14 +389,17 @@ class APILoader:
             if duration := data.get("durationHrs"):
                 values["duration"] = int(duration * 60.0)
 
-            if data["protocolId"] == "P22":
+            if data["protocolId"] == Checklist.Protocol.TRAVELLING.value:
                 # The distance travelled might not be reported.
                 if "effortDistanceKm" in data:
                     dist: str = data["effortDistanceKm"]
                     values["distance"] = round(Decimal(dist), 3)
-            elif data["protocolId"] == "P23":
+            elif data["protocolId"] == Checklist.Protocol.AREA.value:
                 area: str = data["effortAreaHa"]
                 values["area"] = round(Decimal(area), 3)
+
+            if data["protocolId"] not in Checklist.Protocol.values:
+                logger.info("New protocol: %s", data["protocolId"])
 
             if "comments" in data:
                 values["comments"] = data["comments"]

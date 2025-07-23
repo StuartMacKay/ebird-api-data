@@ -3,6 +3,19 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Checklist(models.Model):
+    class Protocol(models.TextChoices):
+        INCIDENTAL = "P20", _("Incidental")
+        STATIONARY = "P21", _("Stationary")
+        TRAVELLING = "P22", _("Travelling")
+        AREA = "P23", _("Area")
+        BANDING = "P33", _("Banding")
+        NOCTURNAL = "P54", _("Nocturnal Flight Call Count")
+        PELAGIC = "P60", _("Pelagic")
+        HISTORICAL = "P62", _("Historical")
+        BREEDING_BIRD_ATLAS = "P65", _("Breeding Bird Atlas")
+        COMMON_BIRD_SURVEY = "P67", _("Common Bird Survey")
+        RAM = "P68", _("RAM--Iberian Seawatch Network")
+
     class Meta:
         verbose_name = _("checklist")
         verbose_name_plural = _("checklists")
@@ -115,6 +128,9 @@ class Checklist(models.Model):
         verbose_name=_("protocol code"),
         help_text=_("The code used to identify the protocol."),
     )
+
+    # Protocol is not used to set the choices, as we still want to load
+    # the checklist when a protocol not defined in the class is used.
 
     project_code = models.TextField(
         blank=True,
