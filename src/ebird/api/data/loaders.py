@@ -390,13 +390,10 @@ class APILoader:
             if duration := data.get("durationHrs"):
                 values["duration"] = int(duration * 60.0)
 
-            if data["protocolId"] == Checklist.Protocol.TRAVELLING.value:
-                # The distance travelled might not be reported.
-                if "effortDistanceKm" in data:
-                    dist: str = data["effortDistanceKm"]
-                    values["distance"] = round(Decimal(dist), 3)
-            elif data["protocolId"] == Checklist.Protocol.AREA.value:
-                area: str = data["effortAreaHa"]
+            if dist := data.get("effortDistanceKm"):
+                values["distance"] = round(Decimal(dist), 3)
+
+            if area := data.get("effortAreaHa"):
                 values["area"] = round(Decimal(area), 3)
 
             if data["protocolId"] not in Checklist.Protocol.values:
