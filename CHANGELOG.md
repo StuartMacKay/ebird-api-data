@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+- Reset the migrations.
+
+To update the database perform the following steps:
+
+1. Make sure you have upgraded to ebird-api-data 0.2.3 and have run the migrations.
+2. Run the following command:
+   ```python manage.py migrate data zero --fake```
+3. Install ebird-api-date 0.3.0:
+   ```uv add ebird-api-data==0.3.0```
+4. Run the following command:
+   ```python manage.py migrate data --fake-initial``` 
+
 ## 0.2.3 (2025-07-24)
 
 - Added timestamp fields to track when records are updated.
