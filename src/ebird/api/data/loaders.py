@@ -224,8 +224,8 @@ class APILoader:
             values["family_code"] = data.get("familyCode", "")
             values["common_name"][language] = data["comName"]
             values["scientific_name"] = data["sciName"]
-            values["family_common_name"][language] = data["familyComName"]
-            values["family_scientific_name"] = data["familySciName"]
+            values["family_common_name"][language] = data.get("familyComName", "")
+            values["family_scientific_name"] = data.get("familySciName", "")
             values["data"]["api"][locale] = data
 
         values["common_name"] = json.dumps(values["common_name"])
