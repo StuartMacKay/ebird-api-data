@@ -77,7 +77,7 @@ if DEBUG:
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-DB_NAME = env.str("DB_NAME", default="ebird_api_data")
+DB_NAME = env.str("DB_NAME", default="data")
 
 DATABASES = {
     "default": env.db_url(default=f"sqlite:///{ROOT_DIR}/{DB_NAME}.sqlite3")
