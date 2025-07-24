@@ -8,6 +8,7 @@ import string
 import time
 
 from decimal import Decimal
+from functools import cache
 from typing import List, Optional
 from urllib.error import HTTPError, URLError
 
@@ -411,6 +412,7 @@ class APILoader:
 
         return checklist
 
+    @cache
     def fetch_subregions(self, region: str) -> List[str]:
         region_types: list = ["subnational1", "subnational2", None]
         levels: int = len(region.split("-", 2))
