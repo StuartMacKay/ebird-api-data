@@ -12,7 +12,6 @@ import environ  # type: ignore
 
 CONFIG_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(CONFIG_DIR)
-DATABASE_DIR = os.path.join(ROOT_DIR, "data", "databases")
 LOG_DIR = os.path.join(ROOT_DIR, "logs")
 
 # ###############
@@ -81,7 +80,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 DB_NAME = env.str("DB_NAME", default="ebird_api_data")
 
 DATABASES = {
-    "default": env.db_url(default=f"sqlite:///{DATABASE_DIR}/{DB_NAME}.sqlite3")
+    "default": env.db_url(default=f"sqlite:///{ROOT_DIR}/{DB_NAME}.sqlite3")
 }
 
 # ############
