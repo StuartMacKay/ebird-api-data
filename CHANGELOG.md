@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+- Updated APILoader as familyCode, in the data from eBird, is optional.
+
 ## 0.2.2 (2025-07-23)
 
 - Added all values to the Species.Category choices.

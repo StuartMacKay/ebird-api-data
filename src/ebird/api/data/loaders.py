@@ -221,7 +221,7 @@ class APILoader:
             values["taxon_order"] = int(data["taxonOrder"])
             values["order"] = data.get("order", "")
             values["category"] = data["category"]
-            values["family_code"] = data["familyCode"]
+            values["family_code"] = data.get("familyCode", "")
             values["common_name"][language] = data["comName"]
             values["scientific_name"] = data["sciName"]
             values["family_common_name"][language] = data["familyComName"]
