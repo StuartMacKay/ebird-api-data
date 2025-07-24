@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+## 0.2.3 (2025-07-24)
+
 - Added timestamp fields to track when records are updated.
 - Updated APILoader as familyCode, in the data from eBird, is optional.
 
