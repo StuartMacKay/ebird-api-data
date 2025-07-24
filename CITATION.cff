@@ -16,4 +16,4 @@ license: MIT License
 message: If you use this software, please cite it using the metadata from this file.
 repository-code: "https://github.com/StuartMacKay/ebird-api-data"
 title: eBird API Data
-version: 0.2.3
+version: 0.3.0
