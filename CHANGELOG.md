@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+## 0.3.2 (2025-07-24)
+
 - Added a list filter for Checklist protocols to the Django Admin.
 - Fixed APILoader so it now saves duration, distance, etc. for all protocols.
 
