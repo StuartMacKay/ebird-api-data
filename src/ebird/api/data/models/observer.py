@@ -47,6 +47,10 @@ class Observer(models.Model):
         null=True, auto_now_add=True, help_text=_("When was the record created.")
     )
 
+    modified = models.DateTimeField(
+        null=True, auto_now=True, help_text=_("When was the record updated.")
+    )
+
     def __repr__(self) -> str:
         return str(self.identifier)
 
