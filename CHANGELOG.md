@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+## 0.3.4 (2025-07-25)
+
 ## 0.3.3 (2025-07-25)
 
 - Added Checklist.get_protocol() to return the name for the protocol_code attribute.
