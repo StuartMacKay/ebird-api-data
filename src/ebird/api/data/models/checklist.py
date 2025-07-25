@@ -151,7 +151,7 @@ class Checklist(models.Model):
         decimal_places=3,
         max_digits=6,
         verbose_name=_("distance"),
-        help_text=_("The distance, in metres, covered while travelling."),
+        help_text=_("The distance, in kilometres, covered while travelling."),
     )
 
     area = models.DecimalField(
@@ -201,3 +201,8 @@ class Checklist(models.Model):
 
     def __str__(self) -> str:
         return str(self.identifier)
+
+    def get_protocol(self):
+        if self.protocol_code:
+            return self.Protocol[self.protocol_code].label if self.protocol_code else ""
+        return ""

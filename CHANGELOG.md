@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+- Added Checklist.get_protocol() to return the name for the protocol_code attribute.
+
 ## 0.3.2 (2025-07-24)
 
 - Added a list filter for Checklist protocols to the Django Admin.

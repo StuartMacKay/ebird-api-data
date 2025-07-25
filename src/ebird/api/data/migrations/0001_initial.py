@@ -130,7 +130,7 @@ class Migration(migrations.Migration):
                 ('protocol_code', models.TextField(blank=True, help_text='The code used to identify the protocol.', verbose_name='protocol code')),
                 ('project_code', models.TextField(blank=True, help_text='The code used to identify the project (portal).', verbose_name='project code')),
                 ('duration', models.IntegerField(blank=True, help_text='The number of minutes spent counting.', null=True, verbose_name='duration')),
-                ('distance', models.DecimalField(blank=True, decimal_places=3, help_text='The distance, in metres, covered while travelling.', max_digits=6, null=True, verbose_name='distance')),
+                ('distance', models.DecimalField(blank=True, decimal_places=3, help_text='The distance, in kilometres, covered while travelling.', max_digits=6, null=True, verbose_name='distance')),
                 ('area', models.DecimalField(blank=True, decimal_places=3, help_text='The area covered, in hectares.', max_digits=6, null=True, verbose_name='area')),
                 ('complete', models.BooleanField(default=False, help_text='All species seen are reported.', verbose_name='complete')),
                 ('comments', models.TextField(blank=True, help_text='Any comments about the checklist.', verbose_name='comments')),
