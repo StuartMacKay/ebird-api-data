@@ -204,5 +204,5 @@ class Checklist(models.Model):
 
     def get_protocol(self):
         if self.protocol_code:
-            return self.Protocol[self.protocol_code].label if self.protocol_code else ""
+            return self.Protocol(self.protocol_code).label if self.protocol_code else ""
         return ""
