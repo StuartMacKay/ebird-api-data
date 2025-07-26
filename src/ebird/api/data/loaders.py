@@ -396,9 +396,6 @@ class APILoader:
             if area := data.get("effortAreaHa"):
                 values["area"] = round(Decimal(area), 3)
 
-            if data["protocolId"] not in Checklist.Protocol.NAMES.keys():
-                logger.info("New protocol: %s", data["protocolId"])
-
             if "comments" in data:
                 values["comments"] = data["comments"]
 

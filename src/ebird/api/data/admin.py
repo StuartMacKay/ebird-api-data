@@ -44,18 +44,6 @@ class ObservationInline(admin.TabularInline):
             .order_by("species__taxon_order")
         )
 
-class ProtocolListFilter(admin.SimpleListFilter):
-    title = _("protocol")
-    parameter_name = "protocol_code"
-
-    def lookups(self, request, model_admin):
-        return [(key, value) for key, value in Checklist.Protocol.NAMES.items()]
-
-    def queryset(self, request, queryset):
-        if value := self.value():
-            return queryset.filter(protocol_code=value)
-
-
 @admin.register(models.Checklist)
 class ChecklistAdmin(admin.ModelAdmin):
     list_display = (
@@ -66,7 +54,6 @@ class ChecklistAdmin(admin.ModelAdmin):
         "location",
         "observer",
     )
-    list_filter = [ProtocolListFilter]
     ordering = ("-started",)
     search_fields = ("identifier", "location__name", "observer__name")
     autocomplete_fields = ("location", "observer")

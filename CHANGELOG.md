@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+- Removed the list filter for protocols in the Checklist Admin. 
+
 ## 0.3.6 (2025-07-26)
 
 - Downgraded Checklist.Protocol to a StrEnum - what an epic journey this
