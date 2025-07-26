@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+## 0.3.5 (2025-07-26)
+
 - Change Checklist.Protocol from a TextChoice to a regular python class so the 
   list of protocols can be updated.
 
