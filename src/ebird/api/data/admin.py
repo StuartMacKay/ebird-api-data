@@ -49,7 +49,7 @@ class ProtocolListFilter(admin.SimpleListFilter):
     parameter_name = "protocol_code"
 
     def lookups(self, request, model_admin):
-        return Checklist.Protocol.choices
+        return [(key, value) for key, value in Checklist.Protocol.NAMES.items()]
 
     def queryset(self, request, queryset):
         if value := self.value():

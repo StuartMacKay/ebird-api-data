@@ -3,18 +3,30 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Checklist(models.Model):
-    class Protocol(models.TextChoices):
-        INCIDENTAL = "P20", _("Incidental")
-        STATIONARY = "P21", _("Stationary")
-        TRAVELLING = "P22", _("Travelling")
-        AREA = "P23", _("Area")
-        BANDING = "P33", _("Banding")
-        NOCTURNAL = "P54", _("Nocturnal Flight Call Count")
-        PELAGIC = "P60", _("Pelagic")
-        HISTORICAL = "P62", _("Historical")
-        BREEDING_BIRD_ATLAS = "P65", _("Breeding Bird Atlas")
-        COMMON_BIRD_SURVEY = "P67", _("Common Bird Survey")
-        RAM = "P68", _("RAM--Iberian Seawatch Network")
+    class Protocol:
+        INCIDENTAL = "P20"  # Birding is not the primary purpose
+        STATIONARY = "P21"  # Move less than 30m (100ft)
+        TRAVELING = "P22"  # Move more than 30m (100ft)
+        AREA = "P23"  # Complete coverage of an area
+        BANDING = "P33"  # Banding/ringing
+        NOCTURNAL = "P54"  # Nocturnal Flight Call Count
+        PELAGIC = "P60"  # Birding from a boat, 2+ miles from land
+        HISTORICAL = "P62"  # Start time, duration or distance not known
+        COMMON_BIRD_SURVEY = "P67"  # Stationary, two-band: <25m, >25m
+        DIRECTIONAL = "P68"  # Stationary, note cardinal direction: N, S, E, W
+
+        NAMES = {
+            INCIDENTAL: _("Incidental"),
+            STATIONARY: _("Stationary"),
+            TRAVELING: _("Traveling"),
+            AREA: _("Area"),
+            BANDING: _("Banding"),
+            NOCTURNAL: _("Nocturnal Flight Call Count"),
+            PELAGIC: _("Pelagic"),
+            HISTORICAL: _("Historical"),
+            COMMON_BIRD_SURVEY: _("Common Bird Survey"),
+            DIRECTIONAL: _("Stationary (directional)"),
+        }
 
     class Meta:
         verbose_name = _("checklist")
@@ -203,6 +215,4 @@ class Checklist(models.Model):
         return str(self.identifier)
 
     def get_protocol(self):
-        if self.protocol_code:
-            return self.Protocol(self.protocol_code).label if self.protocol_code else ""
-        return ""
+        return self.Protocol.NAMES.get(self.protocol_code, "")
