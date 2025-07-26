@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+## 0.3.6 (2025-07-26)
+
 - Downgraded Checklist.Protocol to a StrEnum - what an epic journey this
   turned out to be! The eBird Basic Dataset v1.16 definition, reduces the
   set of protocols to 16. Three core (incidental, stationary, traveling), 
