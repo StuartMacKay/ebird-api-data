@@ -1,32 +1,19 @@
+from enum import StrEnum
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
 class Checklist(models.Model):
-    class Protocol:
-        INCIDENTAL = "P20"  # Birding is not the primary purpose
-        STATIONARY = "P21"  # Move less than 30m (100ft)
-        TRAVELING = "P22"  # Move more than 30m (100ft)
-        AREA = "P23"  # Complete coverage of an area
-        BANDING = "P33"  # Banding/ringing
-        NOCTURNAL = "P54"  # Nocturnal Flight Call Count
-        PELAGIC = "P60"  # Birding from a boat, 2+ miles from land
-        HISTORICAL = "P62"  # Start time, duration or distance not known
-        COMMON_BIRD_SURVEY = "P67"  # Stationary, two-band: <25m, >25m
-        DIRECTIONAL = "P68"  # Stationary, note cardinal direction: N, S, E, W
-
-        NAMES = {
-            INCIDENTAL: _("Incidental"),
-            STATIONARY: _("Stationary"),
-            TRAVELING: _("Traveling"),
-            AREA: _("Area"),
-            BANDING: _("Banding"),
-            NOCTURNAL: _("Nocturnal Flight Call Count"),
-            PELAGIC: _("Pelagic"),
-            HISTORICAL: _("Historical"),
-            COMMON_BIRD_SURVEY: _("Common Bird Survey"),
-            DIRECTIONAL: _("Stationary (directional)"),
-        }
+    class Protocol(StrEnum):
+        INCIDENTAL = "P20"
+        STATIONARY = "P21"
+        TRAVELING = "P22"
+        AREA = "P23"
+        BANDING = "P33"
+        NOCTURNAL = "P54"
+        PELAGIC = "P60"
+        HISTORICAL = "P62"
 
     class Meta:
         verbose_name = _("checklist")
@@ -141,9 +128,6 @@ class Checklist(models.Model):
         help_text=_("The code used to identify the protocol."),
     )
 
-    # Protocol is not used to set the choices, as we still want to load
-    # the checklist when a protocol not defined in the class is used.
-
     project_code = models.TextField(
         blank=True,
         verbose_name=_("project code"),
@@ -213,6 +197,3 @@ class Checklist(models.Model):
 
     def __str__(self) -> str:
         return str(self.identifier)
-
-    def get_protocol(self):
-        return self.Protocol.NAMES.get(self.protocol_code, "")

@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Latest
 
+- Downgraded Checklist.Protocol to a StrEnum - what an epic journey this
+  turned out to be! The eBird Basic Dataset v1.16 definition, reduces the
+  set of protocols to 16. Three core (incidental, stationary, traveling), 
+  four secondary (banding, nocturnal flight call count, eBird pelagic protocol, 
+  historical), one legacy (area), with the remaining eight "descriptive", e.g.
+  "Stationary (2-band: <50m, >50m)". The descriptive protocols may be referred
+  to by a protocol name (eBird Basic Dataset only), e.g. 'Stationary (2-band: 
+  <25m, >25m)' is referred to as 'Common Bird Survey'. This means that the names 
+  for protocols may be country or project specific, which in turns means that
+  the translation strings in a TextChoice class or a table will need to be 
+  overridden to display a translation of the protocol name. In Django this is
+  easy to do by adding a .po file with the overridden strings and add it to the
+  LOCALE_PATHS setting. However, an even simpler solution is to let the project
+  using this one define it's own TextChoice or mapping. 
+  
 ## 0.3.5 (2025-07-26)
 
 - Change Checklist.Protocol from a TextChoice to a regular python class so the 
